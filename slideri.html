@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .header{
+        display: flex;
+        background-color: gray;
+    }
+</style>
+<body>
+    <div id="kontenti">
+        <header>
+            <h2>Slide Show: shfaqja e imazheve</h2>
+            <img id="slideshow"/>
+        </header>
+        <button onclick="changeImg()">Next</button>
+    </div>
+    <script>
+        let i=0;
+        let imgArray = ['pht1.jpg','pht2.jpg','pht3.jpg'];
+
+        function changeImg(){
+            document.getElementById('slideshow').src = imgArray[i];
+            if(i<imgArray.length -1){
+                i++;
+            }
+            else{
+                i=0;
+            }
+            setTimeout('changeImg()', 2000); /*per me u ndrru fotot*/
+        }
+        document.addEventListener(onload, changeImg());
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 167px;
+    padding:2px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+<body> 
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="email" id="name" name="name" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Log In</button>
+    </form>
+    <script>
+        function validateForm(){
+            var name = document.getElementById('name').value;
+            var password = document.getElementById('password').value;
+
+            var nameRegex = /^[a-zA-Z\s]+$/;
+            if (!nameRegex.test(name)){                                                                                                                                                                                                                                     
+                return false;
+            }
+
+            if (passsword.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return false;
+            }
+                return true;
+        }
+    </script>
+
+    <div id="kontenti">
+        <header>
+            <h2>Slide Show: shfaqja e imazheve</h2>
+            <img id="slideshow"/>
+        </header>
+        <button onclick="changeImg()">Next</button>
+    </div>
+    <script>
+        let i=0;
+        let ingArray = ['c:\Users\PULSE Electronics\Desktop\foto per projekt\pht1.jpg.jpg','c:\Users\PULSE Electronics\Desktop\foto per projekt\pht2.jpg.jpg','c:\Users\PULSE Electronics\Desktop\foto per projekt\pht3.jpg.jpg','c:\Users\PULSE Electronics\Desktop\foto per projekt\pht4.jpg.jpg'];
+
+        function changeImg(){
+            document.getElementById('slideshow').src = imgArray[i];
+            if(i<imgArray.length -1){
+                i++;
+            }
+            else{
+                i=0;
+            }
+            setTimeout('changeImg()', 2000); /*per me u ndrru fotot*/
+        }
+        document.addEventListener(onload, changeImg());
+
+    </script>
+
+    
+</body>
+</html>
