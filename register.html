@@ -66,7 +66,7 @@
             </div>
         
             <div class="login-form-container-input">
-              <label for="mbiemri">Mbiemri:</label>
+              <label for="surname">Surname:</label>
               <input type="text"id="mbiemri" name="mbiemri"required>
             </div>
             
@@ -88,6 +88,33 @@
             <button type="submit">Register</button>
           </form>
         </section>
+        <script>
+          function validateForm(){
+              var name = document.getElementById('name').value;
+              var surname = document.getElementById('surname').value;
+              var email = document.getElementById('email').value;
+              var password = document.getElementById('password').value;
+  
+              var nameRegex = /^[A-Z\s]+$/;
+              if (!nameRegex.test(name)){
+                  return false;
+              }
+              var surnameRegex = /^[A-Z\s]+$/;
+              if (!surnameRegex.test(surname)){
+                  return false;
+              }
+              var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+              if(!emailRegex.test(name)){
+                  return false;
+              }
+              var passswordRegex = /^[A-Z\s]{2,3}+$/;
+              if (passsword.length < 6) {
+                  alert('Password must be at least 6 characters long.');
+                  return false;
+              }
+                  return true;
+          }
+      </script>
 
         <section id="section-7">
           <div class="copyright">

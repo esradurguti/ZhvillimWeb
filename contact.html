@@ -9,10 +9,17 @@
 <body>
     <section id="section-1">
         <div class="box">
-          <header>
+          <header class="main-navigation">
             <a href="./Projekti1.html">
               <img src="fotot4/logo1.jpg" class="main-logo">
             </a>
+  
+            <button type="button" class="hamburger-menu-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+  
             <nav>
             <ul class="nav-links">
               <li class="active"><a href="./Projekti1.html">HOME</a></li>
@@ -34,7 +41,7 @@
   <section class="login-page-container">
     <h1 style="text-align: center;">Contact</h1>
 
-    <form class="login-form-container" style="max-width: 450px !important;" id="registrationForm"onsubmit="return validateForm()">
+    <form class="login-form-container" id="registrationForm"onsubmit="return validateForm()">
       <div class="login-form-container-input">
         <label for="email">Name:</label>
         <input type="text" id="name" name="email" required>
@@ -54,11 +61,35 @@
       <!-- <p style="line-height: 25px;">If you don't have an account, please <a href="/register.html">register</a></p> -->
     </form>
   </section>
+  <script>
+    function validateForm(){
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        var nameRegex = /^[A-Z\s]+$/;
+        if (!nameRegex.test(name)){
+            return false;
+        }
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if(!emailRegex.test(name)){
+                return false;
+        }
+        var messageRegex = /^[A-Z\s]+$/;
+        if (!messageRegex.test(name)){
+            return false;
+        }
+          return true;
+
+      }
+</script>
 
   <section id="section-7">
     <div class="copyright">
         <h2>&copy;2023 Rricco Restaurant. All rights reserved.  Privacy Policy</h2>
     </div>
 </section>
+
+<script src="./app.js"></script>
 </body>
 </html>
